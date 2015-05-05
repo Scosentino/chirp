@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 # Be sure to type "twilio-ruby", not just "twilio"
 gem 'twilio-ruby'
+gem 'twiml_template', '~> 1.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'

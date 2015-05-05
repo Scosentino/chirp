@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  post 'twilio/voice', defaults: { format: 'xml' }
+  post 'twilio/voice', defaults: { format: 'twiml' }
   resources :chirps
 end
   # The priority is based upon order of creation: first created -> highest priority.
