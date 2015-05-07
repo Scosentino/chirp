@@ -6,10 +6,19 @@ class TwilioController < ApplicationController
   
   def record
     sender = params[:From]
-    body = "test"
-    recordingurl = params[:RecordingUrl]
-    @chirp = Chirp.new(from: sender, description: body, url: recordingurl)
+    body = "test" 
+    input = params[:RecordingUrl]
+    @chirp = Chirp.new(from: sender, description: body, url: input)
     @chirp.save
+    
+    /#
+    Record Requirements:
+    Say "record a message, then press star, star"
+    Record "limit to 10 seconds, allow media url for listening"
+    Transcribe "text becomes message body"
+    RecordingUrl "option to listen to audio recorded"
+    #/
+    
   end
   
   def sms
