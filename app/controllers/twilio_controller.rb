@@ -6,7 +6,7 @@ class TwilioController < ApplicationController
   
   def record
     sender = params[:From]
-    body = "test" 
+    body = params[:TrascriptionText] 
     input = params[:RecordingUrl]
     @chirp = Chirp.new(from: sender, description: body, url: input)
     @chirp.save
@@ -18,7 +18,7 @@ class TwilioController < ApplicationController
     Transcribe "text becomes message body"
     RecordingUrl "option to listen to audio recorded"
     #/
-    
+    render :nothing
   end
   
   def sms
