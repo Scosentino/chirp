@@ -7,7 +7,7 @@ class TwilioController < ApplicationController
   
   def record
     sender = params[:From]
-    body = params[:TrascriptionText] 
+    body = params[:TranscriptionText] 
     input = params[:RecordingUrl]
     @chirp = Chirp.new(from: sender, description: body, url: input)
     @chirp.save
