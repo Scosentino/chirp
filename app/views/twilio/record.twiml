@@ -1,5 +1,3 @@
 twiml.Say "Please leave a message at the beep. Press the star key when finished."
-
-twiml.Record ""
-
+twiml.Record
 twiml.Say "I did not receive a recording"
