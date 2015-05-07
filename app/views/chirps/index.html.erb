@@ -1,29 +1,47 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Chirps</h1>
+<h1>Chirp</h1>
+<div id="spacer"></div>
+<h3>Feed</h3>
 
 <table>
   <thead>
     <tr>
-      <th>From</th>
-      <th>Description</th>
-      <th>Url</th>
+      <th id="from_title">From</th>
+      <th id="chirp_title">Chrip</th>
+      <div id="void"> </div>
+      <!-- <th>Url</th> -->
       <th colspan="3"></th>
+
     </tr>
+
   </thead>
 
   <tbody>
+
     <% @chirps.each do |chirp| %>
+
       <tr>
-        <td><%= chirp.from %></td>
-        <td><%= chirp.description %></td>
-        <td><%= chirp.url %></td>
-        <td><%= link_to 'Show', chirp %></td>
+
+
+<div>
+        <!-- <div class="from"> --><td class="chirpy"><%= chirp.from %></td>
+       <!-- </div> -->
+        <!-- <div class="chirp"> --><td class-"chirpy"><%= chirp.description %></td><!-- </div> -->
+      </div>
+
+
+
+        <!-- HIDING SHOW EDIT DESTROY -->
+        <!-- <td><%= chirp.url %></td> -->
+       <!--  <td><%= link_to 'Show', chirp %></td> -->
         <!-- <td><%= link_to 'Edit', edit_chirp_path(chirp) %></td> -->
-        <td><%= link_to 'Destroy', chirp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <!-- <td><%= link_to 'Destroy', chirp, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
+  
     <% end %>
   </tbody>
+
 </table>
 
 <br>
