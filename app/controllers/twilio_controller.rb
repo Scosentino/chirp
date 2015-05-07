@@ -1,6 +1,6 @@
 class TwilioController < ApplicationController
   skip_before_filter :verify_authenticity_token
-  before_filter: :check_account_sid, only:[:record]
+  before_filter :check_account_sid, only:[:record]
   
   def voice
   end
