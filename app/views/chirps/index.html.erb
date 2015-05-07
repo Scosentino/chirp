@@ -26,7 +26,7 @@
         <!-- <div class="from"> --><td class="chirpy"><%= chirp.from %></td>
        <!-- </div> -->
         <!-- <div class="chirp"> --><td class="chirpy"><%= chirp.description %></td><!-- </div> -->
-		<td class="chirpy"><%= chirp.url %></td>
+		<td class="chirpy"><%= link_to chirp.url, chirp.url %></td>
 		<td class="chirpy"><%= link_to 'Destroy', chirp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <!-- HIDING SHOW EDIT DESTROY -->
         <!-- <td><%= chirp.url %></td> -->
