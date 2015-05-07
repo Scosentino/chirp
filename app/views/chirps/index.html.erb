@@ -9,8 +9,8 @@
 	  <meta http-equiv="refresh" content="5">
     <tr>
       <th id="from_title">From</th>
-      <th id="chirp_title">Chrip</th>
-      <div id="void"> </div>
+      <th id="chirp_title">Chirp</th>
+      <th id="chirp_title">URL</th>
       <!-- <th>Url</th> -->
       <th colspan="3"></th>
 
@@ -21,18 +21,13 @@
   <tbody>
 
     <% @chirps.each do |chirp| %>
-
+	
       <tr>
-
-
-<div>
         <!-- <div class="from"> --><td class="chirpy"><%= chirp.from %></td>
        <!-- </div> -->
-        <!-- <div class="chirp"> --><td class-"chirpy"><%= chirp.description %></td><!-- </div> -->
-      </div>
-
-
-
+        <!-- <div class="chirp"> --><td class="chirpy"><%= chirp.description %></td><!-- </div> -->
+		<td class="chirpy"><%= chirp.url %></td>
+		<td class="chirpy"><%= link_to 'Destroy', chirp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <!-- HIDING SHOW EDIT DESTROY -->
         <!-- <td><%= chirp.url %></td> -->
        <!--  <td><%= link_to 'Show', chirp %></td> -->
