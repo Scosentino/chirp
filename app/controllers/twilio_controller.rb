@@ -1,5 +1,6 @@
 class TwilioController < ApplicationController
   skip_before_filter :verify_authenticity_token
+  #before_filter: :check_account_sid, only:[:record]
   
   def voice
   end
@@ -18,7 +19,6 @@ class TwilioController < ApplicationController
     Transcribe "text becomes message body"
     RecordingUrl "option to listen to audio recorded"
     #/
-    render :nothing
   end
   
   def sms
@@ -26,6 +26,11 @@ class TwilioController < ApplicationController
     body = params[:Body]
     @chirp = Chirp.new(from: sender, description: body)
     @chirp.save
+  end
+  
+  private
+  def check_account_sid
+    return false unless params[:AccountSid] == "AC117323bc9a4d4653a8edca8ba90293f9"
   end
   
 end
