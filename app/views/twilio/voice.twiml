@@ -1,3 +1,3 @@
 twiml.Say "Please leave a message at the beep. Press the star key twice when finished."
-twiml.Record :maxLength => '10', :method => 'get', :action => '/twilio/record', :transcribe => 'true'
+twiml.Record :maxLength => '10', :method => 'get', :action => '/twilio/record', :transcribeCallback => '/twilio/transcribe'
 twiml.Say "I did not receive a recording"

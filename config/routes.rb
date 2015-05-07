@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'twilio/voice', defaults: { format: 'twiml' }
   get 'twilio/record', defaults: { format: 'twiml' }
   get 'twilio/sms', defaults: { format: 'twiml' }
+  post 'twilio/transcribe', defaults: { format: 'twiml' }
   resources :chirps
   
   root 'chirps#index'

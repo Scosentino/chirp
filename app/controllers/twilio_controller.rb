@@ -1,24 +1,23 @@
 class TwilioController < ApplicationController
   skip_before_filter :verify_authenticity_token
-  #before_filter: :check_account_sid, only:[:record]
+  before_filter: :check_account_sid, only:[:record]
   
   def voice
   end
   
   def record
+    callid = params[:CallSid]
     sender = params[:From]
-    body = params[:TranscriptionText] 
+    body = params[:TranscriptionText]
     input = params[:RecordingUrl]
-    @chirp = Chirp.new(from: sender, description: body, url: input)
+    @chirp = Chirp.new(call_sid: callid, from: sender, description: body, url: input)
     @chirp.save
-    
-    /#
-    Record Requirements:
-    Say "record a message, then press star, star"
-    Record "limit to 10 seconds, allow media url for listening"
-    Transcribe "text becomes message body"
-    RecordingUrl "option to listen to audio recorded"
-    #/
+  end
+  
+  def transcription
+    @chirp = Chirp.find_by_call_sid(params[:CallSid])
+    @chirp.description = params[:TranscriptionText]
+    @chirp.save
   end
   
   def sms
