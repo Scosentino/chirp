@@ -1,12 +1,30 @@
 <p id="notice"><%= notice %></p>
+<nav class="navbar">
+<div class="container">
+	<div class="row vertical-align">
+		<div class="col-md-5">
+			<%= image_tag("chirp.png", alt: "Chirp")%>
+		</div>
+		
+		<div class="col-md-7">
+			<h1 class="pull-right">Broadcast yourself</h1>
+			<h2 class="pull-right">just text or call <strong>1-305-928-1390</strong></h2>
+	</div>
+</div>
+</nav>
 
-<h1>Chirp</h1>
-<div id="spacer"></div>
-<h3>Feed</h3>
+<% @chirps.each do |chirp| %>
+<div class="container">
+	<div class="message">
+	</div>
+	<div class="from">
+	</div>
+</div>
 
+<div class="container">
 <table>
   <thead>
-	  <meta http-equiv="refresh" content="5">
+	  <!-- <meta http-equiv="refresh" content="5"> -->
     <tr>
       <th id="from_title">From</th>
       <th id="chirp_title">Chirp</th>
@@ -37,13 +55,12 @@
   
     <% end %>
   </tbody>
-
 </table>
+<%= link_to 'New Chirp', new_chirp_path %>
+</div>
 
 <br>
-
-<%= link_to 'New Chirp', new_chirp_path %>
-
+<div class="container">
 <!-- testing font awesome -->
 <div class="list-group">
   <a class="list-group-item" href="#"><i class="fa fa-home fa-fw"></i>&nbsp; Home</a>
@@ -59,3 +76,4 @@
   <li><i class="fa-li fa fa-square"></i>in lists</li>
 </ul>
 <!-- testing font awesome -->
+</div>
