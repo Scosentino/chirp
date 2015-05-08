@@ -18,10 +18,11 @@
 		<!-- <meta http-equiv="refresh" content="5"> -->
 		<div class="row list-group-item">
 			<div class="col-md-8">
-				<%= chirp.description %>
+				<p class="lead"><%= chirp.description %></p>
 				</div>
 			<div class="col-md-1">
-				<a href=""><i class="fa fa-play-circle-o fa-2x pull-right"></i></a>
+				<%= link_to raw('<i class="fa fa-play-circle-o fa-2x pull-right"></i>'),
+				chirp.url %>
 			</div>
 			<div class="col-md-2">
 				<%= chirp.from %>
