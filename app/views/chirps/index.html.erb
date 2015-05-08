@@ -1,79 +1,36 @@
 <p id="notice"><%= notice %></p>
 <nav class="navbar">
-<div class="container">
-	<div class="row vertical-align">
-		<div class="col-md-5">
-			<%= image_tag("chirp.png", alt: "Chirp")%>
+	<div class="container">
+		<div class="row vertical-align">
+			<div class="col-md-5">
+				<%= image_tag("chirp.png", alt: "Chirp")%>
+			</div>
+
+			<div class="col-md-7">
+				<h1>Broadcast yourself</h1>
+				<h2>just text or call <strong>1-305-928-1390</strong></h2>
 		</div>
-		
-		<div class="col-md-7">
-			<h1 class="pull-right">Broadcast yourself</h1>
-			<h2 class="pull-right">just text or call <strong>1-305-928-1390</strong></h2>
 	</div>
-</div>
 </nav>
 
 <% @chirps.each do |chirp| %>
-<div class="container">
-	<div class="message">
+	<div class="container list-group">
+		<!-- <meta http-equiv="refresh" content="5"> -->
+		<div class="row list-group-item">
+			<div class="col-md-8">
+				<%= chirp.description %>
+				</div>
+			<div class="col-md-1">
+				<a href=""><i class="fa fa-play-circle-o fa-2x pull-right"></i></a>
+			</div>
+			<div class="col-md-2">
+				<%= chirp.from %>
+				</div>
+			<div class="col-md-1">
+				<!--<a href=""><i class="fa fa-pencil-square-o fa-lg"></i></a>-->
+				<%= link_to raw('<i class="fa fa-trash-o fa-lg pull-right"></i>'),
+				chirp, method: :delete,
+				data: { confirm: 'Are you sure?' } %>
+		</div>
 	</div>
-	<div class="from">
-	</div>
-</div>
-
-<div class="container">
-<table>
-  <thead>
-	  <!-- <meta http-equiv="refresh" content="5"> -->
-    <tr>
-      <th id="from_title">From</th>
-      <th id="chirp_title">Chirp</th>
-      <th id="chirp_title">URL</th>
-      <!-- <th>Url</th> -->
-      <th colspan="3"></th>
-
-    </tr>
-
-  </thead>
-
-  <tbody>
-
-    <% @chirps.each do |chirp| %>
-	
-      <tr>
-        <!-- <div class="from"> --><td class="chirpy"><%= chirp.from %></td>
-       <!-- </div> -->
-        <!-- <div class="chirp"> --><td class="chirpy"><%= chirp.description %></td><!-- </div> -->
-		<td class="chirpy"><%= link_to chirp.url, chirp.url %></td>
-		<td class="chirpy"><%= link_to 'Destroy', chirp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <!-- HIDING SHOW EDIT DESTROY -->
-        <!-- <td><%= chirp.url %></td> -->
-       <!--  <td><%= link_to 'Show', chirp %></td> -->
-        <!-- <td><%= link_to 'Edit', edit_chirp_path(chirp) %></td> -->
-        <!-- <td><%= link_to 'Destroy', chirp, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
-      </tr>
-  
-    <% end %>
-  </tbody>
-</table>
-<%= link_to 'New Chirp', new_chirp_path %>
-</div>
-
-<br>
-<div class="container">
-<!-- testing font awesome -->
-<div class="list-group">
-  <a class="list-group-item" href="#"><i class="fa fa-home fa-fw"></i>&nbsp; Home</a>
-  <a class="list-group-item" href="#"><i class="fa fa-book fa-fw"></i>&nbsp; Library</a>
-  <a class="list-group-item" href="#"><i class="fa fa-pencil fa-fw"></i>&nbsp; Applications</a>
-  <a class="list-group-item" href="#"><i class="fa fa-cog fa-fw"></i>&nbsp; Settings</a>
-</div>
-
-<ul class="fa-ul">
-  <li><i class="fa-li fa fa-check-square"></i>List icons</li>
-  <li><i class="fa-li fa fa-check-square"></i>can be used</li>
-  <li><i class="fa-li fa fa-spinner fa-spin"></i>as bullets</li>
-  <li><i class="fa-li fa fa-square"></i>in lists</li>
-</ul>
-<!-- testing font awesome -->
-</div>
+<% end %>

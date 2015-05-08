@@ -15,7 +15,9 @@
  *= require font-awesome
  */
 
-.vertical-align {
-    display: flex;
-    align-items: center;
-}
+
+
+ .vertical-align {
+     display: flex;
+     align-items: center;
+ }
