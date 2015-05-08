@@ -6,7 +6,8 @@ gem 'rails_12factor', group: :production
 # Configures PostgreSQL
 gem 'pg'
 
-gem "font-awesome-rails"
+gem 'twitter-bootstrap-rails'
+gem 'font-awesome-rails'
 
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3', group: :development
