@@ -27,7 +27,9 @@
 		</div>
 <% end %>
 
-
+<%= link_to raw('<i class="fa fa-play-circle-o fa-2x pull-right"></i>'),
+chirp.url %>
+audio_tag("#{chirp.url}.wav")
 
 
 	<div class="container">
